@@ -3,14 +3,18 @@
 
 
 class Player:
-    def __init(room, health, damage):
-        self.health = health
-        self.damage = damage
+    def __init__(self, location):
+        self.location = location
 
-        def defence(self, enemy):
-            if self > 0 and enemy < 25:
-                health += enemy
+    # def move_to(self, location, direction):
+    #     new_location = [extension for extension in location if(
+    #         extension in direction.name)]
+    #     self.location = new_location[0]
 
-        def attack(self, enemy):
-            if enemy > 0 and damage < 25:
-                damage += enemy
+        # def defence(self, enemy):
+        #     if self > 0 and enemy < 25:
+        #         health += enemy
+
+        # def attack(self, enemy):
+        #     if enemy > 0 and damage < 25:
+        #         damage += enemy

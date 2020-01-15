@@ -40,6 +40,16 @@ room['treasure'].s_to = room['narrow']
 # Make a new player object that is currently in the 'outside' room.
 
 # Write a loop that:
+while True:
+    cmd = input("->")
+    if cmd == 'n':
+        print('go north')
+    elif cmd == 's':
+        print('go south')
+    elif cmd == 'e':
+        print('go east')
+    elif cmd == 'w':
+        print('go west')
 #
 # * Prints the current room name
 # * Prints the current description (the textwrap module might be useful here).

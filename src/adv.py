@@ -1,4 +1,5 @@
 from room import Room
+from player import Player
 
 # Declare all the rooms
 
@@ -39,23 +40,86 @@ room['treasure'].s_to = room['narrow']
 
 # Make a new player object that is currently in the 'outside' room.
 
+player = Player(input("Enter Name:"), room['outside'])
+# print(room['outside'].n_to)
+# print(player)
+
+print("Prepare yourself for the most thrilling game ever", player.name, "!!!")
+print(player.currentRoom)
+print("\nEnter a command!(n, s ,e ,w ,q)")
+
+directions = ["n", "s", "w", "e", "q"]
+
 # Write a loop that:
 while True:
-    cmd = input("->")
-    if cmd == 'n':
-        print('go north')
-    elif cmd == 's':
-        print('go south')
-    elif cmd == 'e':
-        print('go east')
-    elif cmd == 'w':
-        print('go west')
-#
-# * Prints the current room name
+    # Read command
+    cmd = input("~~> ").lower()
+    # Check if it's n/s/e/w/q
+    if cmd in directions:
+        # Make player travel in that direction
+        player.travel(cmd)
+    elif cmd == "q":
+        # Quit
+        print("Goodbye!")
+        exit()
+    else:
+        print("I did not recognize that command")
+
 # * Prints the current description (the textwrap module might be useful here).
-# * Waits for user input and decides what to do.
+    # print(Room.description)
+    # * Waits for user input and decides what to do.
+    #
+    # If the user enters a cardinal direction, attempt to move to the room there.
+
+
 #
-# If the user enters a cardinal direction, attempt to move to the room there.
+#     if cmd in directions:
+#         if hasattr(player.currentRoom, F"{cmd}_to") is None:
+#             player.travel(cmd)
+#             # player.currentRoom = getattr(player.currentRoom, F"{cmd}_to")
+#             print("can't go that way")
+#         else:
+#             print("can't go that way")
+#             pass
+#     else:
+#         print("or that way")
+#
+#     if cmd == 'n' and hasattr(player.currentRoom, "n_to"):
+#         # and room.n_to === :
+#         # print('going north')
+#         # player.currentRoom == room['foyer']
+#         # print('room:::', room['foyer'])
+#         player.currentRoom = getattr(player.currentRoom, F"{cmd}_to")
+#         print(player.currentRoom)
+#         continue
+#         # print(room['outside'])
+#     elif cmd == 's':
+#         player.currentRoom = getattr(player.currentRoom, F"{cmd}_to")
+#         print(player.currentRoom)
+#     elif cmd == 'e':
+#         print('go east')
+#         player.currentRoom = getattr(player.currentRoom, F"{cmd}_to")
+#         print(player.currentRoom)
+#     elif cmd == 'w':
+#         print('go west')
+#         player.currentRoom = getattr(player.currentRoom, F"{cmd}_to")
+#         print(player.currentRoom)
+#     elif cmd == 'q':
+#         print("Goodbye!")
+#         break
+#     else:
+#         print("Enter a valid command!(n, s ,e ,w ,q)")
+# #
+
+
+
 # Print an error message if the movement isn't allowed.
 #
 # If the user enters "q", quit the game.
+
+
+# NEED INPUT -- RPS APP -- CHECK VIDEO
+
+# STRING METHOD
+
+# HINT -- INFO TO ADD TO A LIST

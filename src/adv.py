@@ -1,5 +1,6 @@
 from room import Room
 from player import Player
+from item import Item
 
 # Declare all the rooms
 
@@ -22,7 +23,15 @@ chamber! Sadly, it has already been completely emptied by
 earlier adventurers. The only exit is to the south."""),
 }
 
+# Items
 
+items = {
+    'dagger': Item("dagger", """basic dagger"""),
+    'sword': Item("sword", """sword dagger"""),
+    'potion': Item("Heal Potion", """Heal Potion recovers 5hp"""),
+    'lightning': Item("Lightling Rune", """Gives magic ability lightning"""),
+    'fire': Item("Fire Rune", """Gives magic ability fire"""),
+}
 # Link rooms together
 
 room['outside'].n_to = room['foyer']

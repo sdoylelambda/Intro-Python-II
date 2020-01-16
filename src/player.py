@@ -15,6 +15,22 @@ class Player:
             print("You cannot move in that direction.")
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     # ADD METHODS
     # def get_name(self):
     #     return self.name

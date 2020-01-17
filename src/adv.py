@@ -26,12 +26,15 @@ earlier adventurers. The only exit is to the south."""),
 # Items
 
 items = {
-    'dagger': Item("dagger", """basic dagger"""),
+    'dagger': Item("dagger", """dagger"""),
     'sword': Item("sword", """sword dagger"""),
     'potion': Item("Heal Potion", """Heal Potion recovers 5hp"""),
-    'lightning': Item("Lightling Rune", """Gives magic ability lightning"""),
+    'lightning': Item("Lightning Rune", """Gives magic ability lightning"""),
     'fire': Item("Fire Rune", """Gives magic ability fire"""),
 }
+
+for i in items:
+    print(i)
 # Link rooms together
 
 room['outside'].n_to = room['foyer']
@@ -42,6 +45,11 @@ room['overlook'].s_to = room['foyer']
 room['narrow'].w_to = room['foyer']
 room['narrow'].n_to = room['treasure']
 room['treasure'].s_to = room['narrow']
+
+# Link items
+dagger = Item("dagger", items['dagger'])
+print(dagger)
+
 
 #
 # Main
@@ -67,6 +75,7 @@ while True:
     if cmd in directions:
         # Make player travel in that direction
         player.travel(cmd)
+        print(dagger)
     elif cmd == "q":
         # Quit
         print("Goodbye!")
